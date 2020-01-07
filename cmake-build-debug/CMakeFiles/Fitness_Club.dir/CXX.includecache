@@ -9,6 +9,8 @@
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Consultant.h
 Employee.h
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Employee.h
+Templates.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Templates.h
 
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Contract.h
 vector
@@ -21,6 +23,8 @@ Trainer.h
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Trainer.h
 Consultant.h
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Consultant.h
+Templates.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Templates.h
 
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Employee.h
 string
@@ -29,6 +33,18 @@ iostream
 -
 sstream
 -
+Templates.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Templates.h
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/FitnessClub.cpp
+FitnessClub.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/FitnessClub.h
+iostream
+-
+vector
+-
+Templates.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Templates.h
 
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/FitnessClub.h
 vector
@@ -49,10 +65,24 @@ C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Contract.h
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Member.h
 Trainer.h
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Trainer.h
+Templates.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Templates.h
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.cpp
+Receptionist.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.h
 
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.h
 Employee.h
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Employee.h
+Templates.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Templates.h
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Templates.h
+iostream
+-
+sstream
+-
 
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Trainer.h
 Employee.h
@@ -63,6 +93,8 @@ string
 -
 vector
 -
+Templates.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Templates.h
 
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/TrainingPlan.h
 vector

@@ -5,6 +5,7 @@
 #include "Member.h"
 #include "Trainer.h"
 #include "Consultant.h"
+#include "Templates.h"
 
 class Contract{
 private:
@@ -41,6 +42,7 @@ public:
     Consultant* GetConsultant(){return consultant;};
     Trainer* GetTrainer(){return trainer;};
     //Member* GetMember();
+
 
 };
 

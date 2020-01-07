@@ -1,6 +1,7 @@
 #include "FitnessClub.h"
 #include <iostream>
 #include <vector>
+#include "Templates.h"
 
 FitnessClub::FitnessClub(string name, string address, string city) {
     this->name = name;
@@ -300,8 +301,8 @@ void FitnessClub::DeleteContract(Contract * contract) {
 
 string FitnessClub::GetInformation() {
     string result="";
-    result+="Name: "+name+", Address: "+address+", City: "+city+", Open Hours: "+to_string(openTime)+" - "+to_string(closeTime)+", Total Budget: "+to_string(totalBudget)
-            +", Additional Expenses: "+to_string(additionalExpenses);
+    result+="Name: "+name+", Address: "+address+", City: "+city+", Open Hours: "+to_string(openTime)+"-"+to_string(closeTime)+", Total Budget: "+to_string_with_precision(totalBudget, 2)
+            +", Additional Expenses: "+to_string_with_precision(additionalExpenses, 2);
     return result;
 }
 

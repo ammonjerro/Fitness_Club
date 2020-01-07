@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include "Templates.h"
 
 #ifndef FITNESS_CLUB_EMPLOYEE_H
 #define FITNESS_CLUB_EMPLOYEE_H

@@ -28,10 +28,11 @@ int main() {
     club1->TransferContract(club1->FindMember(1), club1->FindMember(2));
     club1->FindContract(1)->PrintContract();
     //club1->TerminateContract(club1->FindContract(1));
-    //club1->FindContract(2)->PrintContract();
     //club1->ChargeMonthlyFee(club1->FindContract(2));
     club1->FindMember(2)->TakePersonalTraining();
     club1->FindMember(2)->TakePersonalTraining();
+    club1->FindContract(2)->PrintContract();
+    club1->PrintInformation();
 
     //club1->ChargeTrainingFee(club1->FindContract(2));
     //club1->ChargeMembers();

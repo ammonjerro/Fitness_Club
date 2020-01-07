@@ -4,6 +4,7 @@
 #include "TrainingPlan.h"
 #include <string>
 #include <vector>
+#include "Templates.h"
 using namespace std;
 
 class Trainer: public Employee {

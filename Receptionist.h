@@ -1,7 +1,7 @@
 #ifndef FITNESS_CLUB_RECEPTIONIST_H
 #define FITNESS_CLUB_RECEPTIONIST_H
 #include "Employee.h"
-
+#include "Templates.h"
 struct Product{
     int id;
     string name;
@@ -17,14 +17,14 @@ private:
 public:
     //Constructor and Destructor
     Receptionist(string name, string surname, string nip, string address, int id, int rank, float hourlyFee, float productsInterest) : hourlyFee(hourlyFee), productsInterest(productsInterest), Employee(name, surname, nip, address, id, rank){hoursWorked=0; ProductsEarnings=0;};
-    ~Receptionist(){};
+    ~Receptionist();
 
     //Getters and Setters
     float GetHourlyFee(){return hourlyFee;};
     int GetHoursWorked(){ return hoursWorked;};
     float GetProductsEarnings(){return ProductsEarnings;};
     float GetProductsInterest(){return productsInterest;};
-    void SetHourlyFee(float amount);
+    void SetHourlyFee(float amount){hourlyFee=amount;};
     void SetHoursWorked(int amount){hoursWorked=amount;};
 
     string GetInformation() override; //returns a concatenated string of Employee's fields, Trainer's fields and his position name

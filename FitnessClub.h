@@ -46,7 +46,7 @@ public:
     bool EmployConsultant(string name, string surname, string nip, string address, int id, int rank, float contractInterest, float trainingInterest, float baseSalary); //creates new Consultant object, assigns its fields with given values, adds it to Trainer list
     bool EmployReceptionist(string name, string surname, string nip, string address, int id, int rank, float hourlyFee, float productsInterest); //creates new Receptionist object, assigns its fields with given values, adds it to Trainer list
     bool FireEmployee(Employee* emp); //pays partial salary to an employee, if they have been associated with any contracts it chooses randomly from other employees and changes the pointers, then removes it from the list of employees, and deallocates memory
-    bool PromoteEmployee(Employee* emp); //calls given Employee's override Promote() method, then removes it form the list of employees, and deallocates memory
+    bool PromoteEmployee(Employee* emp); //calls given Employee's override Promote() method
     bool ResetMembers(); //invokes each employee's method ResetValues() resets hours worked etc, usually done at the end of the month
 
     //Methods Find(**) have many overloads, to allow searching by various data, below examples of ones with ID argument
@@ -89,13 +89,13 @@ public:
     void PrintEmployees();
     void PrintMembers();
 
-    void ShowSize(){cout << Members.size();};
-
     //Products
     bool AddProduct(int id, string name, float price); //creates new Product and adds it to the Products vector;
     bool RemoveProduct(Product* product); //remove Product from the list, and deallocates memory
     bool ChangeProductPrice(Product* product, float newPrice); //changes given product price
     static Product* FindProduct(int id); //Searches the list of avaliable products in reception by ID, returns NULL if not found;
+
+
 };
 
 

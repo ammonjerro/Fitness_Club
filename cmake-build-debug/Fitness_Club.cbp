@@ -116,6 +116,9 @@
 		<Unit filename="C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.h">
 			<Option target="Fitness_Club"/>
 		</Unit>
+		<Unit filename="C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Templates.h">
+			<Option target="Fitness_Club"/>
+		</Unit>
 		<Unit filename="C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Trainer.cpp">
 			<Option target="Fitness_Club"/>
 		</Unit>

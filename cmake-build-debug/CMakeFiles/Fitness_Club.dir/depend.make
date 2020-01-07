@@ -4,17 +4,20 @@
 CMakeFiles/Fitness_Club.dir/Consultant.cpp.obj: ../Consultant.cpp
 CMakeFiles/Fitness_Club.dir/Consultant.cpp.obj: ../Consultant.h
 CMakeFiles/Fitness_Club.dir/Consultant.cpp.obj: ../Employee.h
+CMakeFiles/Fitness_Club.dir/Consultant.cpp.obj: ../Templates.h
 
 CMakeFiles/Fitness_Club.dir/Contract.cpp.obj: ../Consultant.h
 CMakeFiles/Fitness_Club.dir/Contract.cpp.obj: ../Contract.cpp
 CMakeFiles/Fitness_Club.dir/Contract.cpp.obj: ../Contract.h
 CMakeFiles/Fitness_Club.dir/Contract.cpp.obj: ../Employee.h
 CMakeFiles/Fitness_Club.dir/Contract.cpp.obj: ../Member.h
+CMakeFiles/Fitness_Club.dir/Contract.cpp.obj: ../Templates.h
 CMakeFiles/Fitness_Club.dir/Contract.cpp.obj: ../Trainer.h
 CMakeFiles/Fitness_Club.dir/Contract.cpp.obj: ../TrainingPlan.h
 
 CMakeFiles/Fitness_Club.dir/Employee.cpp.obj: ../Employee.cpp
 CMakeFiles/Fitness_Club.dir/Employee.cpp.obj: ../Employee.h
+CMakeFiles/Fitness_Club.dir/Employee.cpp.obj: ../Templates.h
 
 CMakeFiles/Fitness_Club.dir/FitnessClub.cpp.obj: ../Consultant.h
 CMakeFiles/Fitness_Club.dir/FitnessClub.cpp.obj: ../Contract.h
@@ -23,20 +26,24 @@ CMakeFiles/Fitness_Club.dir/FitnessClub.cpp.obj: ../FitnessClub.cpp
 CMakeFiles/Fitness_Club.dir/FitnessClub.cpp.obj: ../FitnessClub.h
 CMakeFiles/Fitness_Club.dir/FitnessClub.cpp.obj: ../Member.h
 CMakeFiles/Fitness_Club.dir/FitnessClub.cpp.obj: ../Receptionist.h
+CMakeFiles/Fitness_Club.dir/FitnessClub.cpp.obj: ../Templates.h
 CMakeFiles/Fitness_Club.dir/FitnessClub.cpp.obj: ../Trainer.h
 CMakeFiles/Fitness_Club.dir/FitnessClub.cpp.obj: ../TrainingPlan.h
 
 CMakeFiles/Fitness_Club.dir/Member.cpp.obj: ../Employee.h
 CMakeFiles/Fitness_Club.dir/Member.cpp.obj: ../Member.cpp
 CMakeFiles/Fitness_Club.dir/Member.cpp.obj: ../Member.h
+CMakeFiles/Fitness_Club.dir/Member.cpp.obj: ../Templates.h
 CMakeFiles/Fitness_Club.dir/Member.cpp.obj: ../Trainer.h
 CMakeFiles/Fitness_Club.dir/Member.cpp.obj: ../TrainingPlan.h
 
 CMakeFiles/Fitness_Club.dir/Receptionist.cpp.obj: ../Employee.h
 CMakeFiles/Fitness_Club.dir/Receptionist.cpp.obj: ../Receptionist.cpp
 CMakeFiles/Fitness_Club.dir/Receptionist.cpp.obj: ../Receptionist.h
+CMakeFiles/Fitness_Club.dir/Receptionist.cpp.obj: ../Templates.h
 
 CMakeFiles/Fitness_Club.dir/Trainer.cpp.obj: ../Employee.h
+CMakeFiles/Fitness_Club.dir/Trainer.cpp.obj: ../Templates.h
 CMakeFiles/Fitness_Club.dir/Trainer.cpp.obj: ../Trainer.cpp
 CMakeFiles/Fitness_Club.dir/Trainer.cpp.obj: ../Trainer.h
 CMakeFiles/Fitness_Club.dir/Trainer.cpp.obj: ../TrainingPlan.h
@@ -47,6 +54,7 @@ CMakeFiles/Fitness_Club.dir/main.cpp.obj: ../Employee.h
 CMakeFiles/Fitness_Club.dir/main.cpp.obj: ../FitnessClub.h
 CMakeFiles/Fitness_Club.dir/main.cpp.obj: ../Member.h
 CMakeFiles/Fitness_Club.dir/main.cpp.obj: ../Receptionist.h
+CMakeFiles/Fitness_Club.dir/main.cpp.obj: ../Templates.h
 CMakeFiles/Fitness_Club.dir/main.cpp.obj: ../Trainer.h
 CMakeFiles/Fitness_Club.dir/main.cpp.obj: ../TrainingPlan.h
 CMakeFiles/Fitness_Club.dir/main.cpp.obj: ../main.cpp

@@ -1,6 +1,7 @@
 #ifndef FITNESS_CLUB_CONSULTANT_H
 #define FITNESS_CLUB_CONSULTANT_H
 #include "Employee.h"
+#include "Templates.h"
 
 class Consultant: public Employee{
 private:
