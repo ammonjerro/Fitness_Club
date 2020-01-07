@@ -1,0 +1,104 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Consultant.h
+Employee.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Employee.h
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Contract.h
+vector
+-
+iostream
+-
+Member.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Member.h
+Trainer.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Trainer.h
+Consultant.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Consultant.h
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Employee.h
+string
+-
+iostream
+-
+sstream
+-
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/FitnessClub.cpp
+FitnessClub.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/FitnessClub.h
+iostream
+-
+vector
+-
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/FitnessClub.h
+vector
+-
+iostream
+-
+Member.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Member.h
+Trainer.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Trainer.h
+Consultant.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Consultant.h
+Receptionist.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.h
+Contract.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Contract.h
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Member.h
+Trainer.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Trainer.h
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.cpp
+Receptionist.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.h
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.h
+Employee.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Employee.h
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Trainer.h
+Employee.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Employee.h
+TrainingPlan.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/TrainingPlan.h
+string
+-
+vector
+-
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/TrainingPlan.h
+vector
+-
+string
+-
+
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/main.cpp
+iostream
+-
+cstdlib
+-
+Employee.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Employee.h
+FitnessClub.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/FitnessClub.h
+Trainer.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Trainer.h
+Receptionist.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.h
+Consultant.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Consultant.h
+TrainingPlan.h
+C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/TrainingPlan.h
+vector
+-
+
