@@ -159,16 +159,7 @@ bool FitnessClub::TransferContract(Member *from, Member *to) {
 
 bool FitnessClub::TerminateContract(Contract * contract) {
     ChargeTerminationFee(contract);
-    int i=0;
-    for(Contract* c : Contracts){
-        if(c==contract){
-            Contracts.erase(Contracts.begin()+i);
-            contract->GetMember()->SetHasActiveContract(false);
-            delete(c);
-            return true;
-        }
-        i++;
-    }
+    DeleteContract(contract);
     return false;
 }
 
@@ -266,6 +257,55 @@ bool FitnessClub::setOpenHours(int open, int closed) {
 }
 
 void FitnessClub::NextMonth() {
+    ChargeMembers();
+    PaySalaryToAll();
+    ResetHoursWorked();
+    DecrementContractDurations();
+    DeleteExpiredContracts();
+}
 
+void FitnessClub::ResetHoursWorked() {
+    for(Employee* emp : Employees){
+        if(typeid(*emp) == typeid(Receptionist)){
+            Receptionist* receptionist = dynamic_cast<Receptionist *>(emp);
+            receptionist->SetHoursWorked(0);
+        }
+    }
+}
+
+void FitnessClub::DecrementContractDurations() {
+    for(Contract* c : Contracts){
+        c->SetDuration(c->GetDuration()-1);
+    }
+}
+
+void FitnessClub::DeleteExpiredContracts() {
+    for(Contract* c : Contracts){
+        if(c->GetDuration()==0)
+            DeleteContract(c);
+    }
+}
+
+void FitnessClub::DeleteContract(Contract * contract) {
+    int i=0;
+    for(Contract* c : Contracts){
+        if(c==contract){
+            Contracts.erase(Contracts.begin()+i);
+            contract->GetMember()->SetHasActiveContract(false);
+            delete(c);
+        }
+        i++;
+    }
+}
+
+string FitnessClub::GetInformation() {
+    string result="";
+    result+="Name: "+name+", Address: "+address+", City: "+city+", Open Hours: "+to_string(openTime)+" - "+to_string(closeTime)+", Total Budget: "+to_string(totalBudget)
+            +", Additional Expenses: "+to_string(additionalExpenses);
+    return result;
+}
+
+void FitnessClub::PrintInformation() {
+    cout<<GetInformation()<<endl;
 }
 

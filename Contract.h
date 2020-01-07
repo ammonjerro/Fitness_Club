@@ -25,7 +25,7 @@ public:
     trainingFee(trainingFee), terminationFee(terminationFee) {};
     //~Contract(){};
     //Getters and Setters
-    void SetDuration(int duration);
+    void SetDuration(int duration){this->duration=duration;};
     void SetMembershipFee(float amount);
     void SetTrainingFee(float amount);
     void SetTerminationFee(float amount);
@@ -33,7 +33,7 @@ public:
     void SetMember(Member* m){member=m;};
     void SetConsultant(Consultant* consultant);
     int GetId(){return id;};
-    int GetDuration();
+    int GetDuration(){return duration;};
     Member* GetMember(){return member;};
     float GetMembershipFee(){return membershipFee;};;
     float GetTrainingFee(){return trainingFee;};

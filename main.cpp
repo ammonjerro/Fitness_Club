@@ -34,11 +34,9 @@ int main() {
     club1->FindMember(2)->TakePersonalTraining();
 
     //club1->ChargeTrainingFee(club1->FindContract(2));
-    club1->ChargeMembers();
+    //club1->ChargeMembers();
 
-    club1->FindReceptionist(3)->WorkShift(5);
-    cout<<club1->GetSalary(club1->FindEmployee(3));
-
-
+    //club1->FindReceptionist(3)->WorkShift(5);
+    //cout<<club1->GetSalary(club1->FindEmployee(3));
     return 0;
 }

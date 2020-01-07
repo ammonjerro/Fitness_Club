@@ -1,7 +1,8 @@
 #include "Contract.h"
+#include <iostream>
 
 void Contract::PrintContract() {
-    cout<<GetInformation()<<endl;
+    cout << GetInformation()<<endl;
 }
 
 string Contract::GetInformation() {

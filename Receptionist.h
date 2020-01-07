@@ -25,7 +25,7 @@ public:
     float GetProductsEarnings(){return ProductsEarnings;};
     float GetProductsInterest(){return productsInterest;};
     void SetHourlyFee(float amount);
-    void SetHoursWorked(int amount);
+    void SetHoursWorked(int amount){hoursWorked=amount;};
 
     string GetInformation() override; //returns a concatenated string of Employee's fields, Trainer's fields and his position name
     bool Promote()override{}; //Dependent on their rank attribute, their horlyFee and/or productsInterest increase

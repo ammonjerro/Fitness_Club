@@ -64,7 +64,7 @@ public:
     bool TransferContract(Member* from, Member* to); //first it checks if both members have contracts and determines if operation is possible, then changes given's contract pointer to the latter member and sets proper hasContract values
     Contract* FindContract(int id); //searches the list of contracts by ID, returns NULL if contract wasn't found
     Contract* FindContract(Member* member); //searches the list of contracts by member associated with it, returns NULL if contract wasn't found
-    //void DeleteContract(Contract*); //Removes contract from the list, deallocates memory
+    void DeleteContract(Contract* contract); //Removes contract from the list, deallocates memory
 
     //Finances management
     void ChargeMonthlyFee(Contract* contract); //Adds proper amount of funds to totalBudget
@@ -80,6 +80,9 @@ public:
 
     //Organization
     bool setOpenHours(int open, int closed); //changes values of openTime and closeTime
+    void ResetHoursWorked();
+    void DecrementContractDurations();
+    void DeleteExpiredContracts();
     void NextMonth(); //charges members, pays salaries, resets hours worked, decrements contracts durations, deletes expired contracts
     string GetInformation(); //creates a string containing information about a club
     void PrintInformation(); //uses GetInformation and prints it to the console
