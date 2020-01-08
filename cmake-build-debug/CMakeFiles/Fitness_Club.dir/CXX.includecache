@@ -45,6 +45,8 @@ vector
 -
 Templates.h
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Templates.h
+time.h
+-
 
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/FitnessClub.h
 vector
@@ -67,10 +69,6 @@ Trainer.h
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Trainer.h
 Templates.h
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Templates.h
-
-C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.cpp
-Receptionist.h
-C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.h
 
 C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.h
 Employee.h
@@ -100,25 +98,5 @@ C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/TrainingPlan.h
 vector
 -
 string
--
-
-C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/main.cpp
-iostream
--
-cstdlib
--
-Employee.h
-C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Employee.h
-FitnessClub.h
-C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/FitnessClub.h
-Trainer.h
-C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Trainer.h
-Receptionist.h
-C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Receptionist.h
-Consultant.h
-C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/Consultant.h
-TrainingPlan.h
-C:/Users/Ammon Pc/Documents/Education/C++/Fitness Club - Code/TrainingPlan.h
-vector
 -
 

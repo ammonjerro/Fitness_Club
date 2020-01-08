@@ -20,22 +20,22 @@ public:
     ~Employee(){};
 
     //Getters and Setters
-    string GetName();
-    string GetSurname();
-    string GetNip();
-    string GetAddress();
+    string GetName(){return name;};
+    string GetSurname(){return surname;};
+    string GetNip(){return nip;};
+    string GetAddress(){return address;};
     int GetId(){return id;};
-    int GetRank();
-    void SetName(string name);
-    void SetSurname(string surname);
-    void SetNip(string nip);
-    void SetAddress(string address);
-    void SetId(int id);
-    void SetRank(int rank);
+    int GetRank(){return rank;};
+    void SetName(string value){name=value;};
+    void SetSurname(string value){surname=value;};
+    void SetNip(string value){nip=value;};
+    void SetAddress(string value){address=value;};
+    void SetId(int value){id=value;};
+    void SetRank(int value){rank=value;};
 
-    virtual bool Promote(){}; //each employee promotes in different way, check override methods
+    virtual bool Promote(); //each employee promotes in different way, check override methods
     virtual string GetInformation(); //each employee returns information depending on his position in club
-    virtual bool ResetValues(){}; //method set some fields specific to each employee to 0, used at the end of a month
+    virtual void ResetValues(){}; //method set some fields specific to each employee to 0, used at the end of a month
 
 };
 

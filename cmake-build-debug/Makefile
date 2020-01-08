@@ -311,6 +311,33 @@ Trainer.cpp.s:
 	$(MAKE) -f CMakeFiles\Fitness_Club.dir\build.make CMakeFiles/Fitness_Club.dir/Trainer.cpp.s
 .PHONY : Trainer.cpp.s
 
+TrainingPlan.obj: TrainingPlan.cpp.obj
+
+.PHONY : TrainingPlan.obj
+
+# target to build an object file
+TrainingPlan.cpp.obj:
+	$(MAKE) -f CMakeFiles\Fitness_Club.dir\build.make CMakeFiles/Fitness_Club.dir/TrainingPlan.cpp.obj
+.PHONY : TrainingPlan.cpp.obj
+
+TrainingPlan.i: TrainingPlan.cpp.i
+
+.PHONY : TrainingPlan.i
+
+# target to preprocess a source file
+TrainingPlan.cpp.i:
+	$(MAKE) -f CMakeFiles\Fitness_Club.dir\build.make CMakeFiles/Fitness_Club.dir/TrainingPlan.cpp.i
+.PHONY : TrainingPlan.cpp.i
+
+TrainingPlan.s: TrainingPlan.cpp.s
+
+.PHONY : TrainingPlan.s
+
+# target to generate assembly for a file
+TrainingPlan.cpp.s:
+	$(MAKE) -f CMakeFiles\Fitness_Club.dir\build.make CMakeFiles/Fitness_Club.dir/TrainingPlan.cpp.s
+.PHONY : TrainingPlan.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -368,6 +395,9 @@ help:
 	@echo ... Trainer.obj
 	@echo ... Trainer.i
 	@echo ... Trainer.s
+	@echo ... TrainingPlan.obj
+	@echo ... TrainingPlan.i
+	@echo ... TrainingPlan.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -16,7 +16,7 @@ private:
     float ProductsEarnings; //amount of funds Receptionist gathered in cash from Products, at the end of the month he will be paid adequate part
 public:
     //Constructor and Destructor
-    Receptionist(string name, string surname, string nip, string address, int id, int rank, float hourlyFee, float productsInterest) : hourlyFee(hourlyFee), productsInterest(productsInterest), Employee(name, surname, nip, address, id, rank){hoursWorked=0; ProductsEarnings=0;};
+    Receptionist(string name, string surname, string nip, string address, int id, int rank) : Employee(name, surname, nip, address, id, rank){hoursWorked=0; ProductsEarnings=0; SetHourlyFee(); SetProductsInterest();};
     ~Receptionist();
 
     //Getters and Setters
@@ -24,12 +24,13 @@ public:
     int GetHoursWorked(){ return hoursWorked;};
     float GetProductsEarnings(){return ProductsEarnings;};
     float GetProductsInterest(){return productsInterest;};
-    void SetHourlyFee(float amount){hourlyFee=amount;};
+    void SetHourlyFee();
     void SetHoursWorked(int amount){hoursWorked=amount;};
+    void SetProductsInterest();
 
     string GetInformation() override; //returns a concatenated string of Employee's fields, Trainer's fields and his position name
-    bool Promote()override{}; //Dependent on their rank attribute, their horlyFee and/or productsInterest increase
-    bool ResetValues()override{}; // sets hoursWorked and ProductEarnings to 0
+    bool Promote()override; //Dependent on their rank attribute, their horlyFee and/or productsInterest increase
+    void ResetValues()override; // sets hoursWorked and ProductEarnings to 0
     bool WorkShift(int hours); //Each time receptionist comes to workplace he can take a shift, a number between 4-12 hours
     bool WeekendShift(int hours); //During weekends their hours count as two
     bool SellProduct(Product* product); //Receptionist chooses product from a static vector of products from main class FitnessClub, then adds corresponding value to his ProductsEarnings

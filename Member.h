@@ -19,6 +19,9 @@ public:
     Member(int id, string name, string surname, string address, string gender) : id(id), name(name), surname(surname), address(address), gender(gender){trainings=0; personalTrainings=0; hasActiveContract=0;};
     ~Member(){};
     //Getters and Setters
+    string GetName(){return name;};
+    string GetSurname(){return surname;};
+    string GetAddress(){return address;};
     int GetId(){return id;};
     bool HasActiveContract(){return hasActiveContract;};
     void SetHasActiveContract(bool x){hasActiveContract=x;};

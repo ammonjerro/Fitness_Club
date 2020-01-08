@@ -12,3 +12,11 @@ string Employee::GetInformation() {
     result+="Address: "+address;
     return result;
 }
+
+bool Employee::Promote() {
+    if(rank < 5){
+        rank++;
+        return true;
+    }
+    else return false;
+}

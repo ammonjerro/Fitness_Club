@@ -48,6 +48,9 @@ CMakeFiles/Fitness_Club.dir/Trainer.cpp.obj: ../Trainer.cpp
 CMakeFiles/Fitness_Club.dir/Trainer.cpp.obj: ../Trainer.h
 CMakeFiles/Fitness_Club.dir/Trainer.cpp.obj: ../TrainingPlan.h
 
+CMakeFiles/Fitness_Club.dir/TrainingPlan.cpp.obj: ../TrainingPlan.cpp
+CMakeFiles/Fitness_Club.dir/TrainingPlan.cpp.obj: ../TrainingPlan.h
+
 CMakeFiles/Fitness_Club.dir/main.cpp.obj: ../Consultant.h
 CMakeFiles/Fitness_Club.dir/main.cpp.obj: ../Contract.h
 CMakeFiles/Fitness_Club.dir/main.cpp.obj: ../Employee.h

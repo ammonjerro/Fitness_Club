@@ -15,3 +15,15 @@ bool Member::TakePersonalTraining() {
     personalTrainings++;
     return true;
 }
+
+void Member::PrintMe() {
+    cout<<GetInformation()<<endl;
+}
+
+bool Member::TakeTraining() {
+    if(hasActiveContract){
+        trainings++;
+        return true;
+    }
+    else return false;
+}

@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Fitness_Club.dir/Member.cpp.obj"
   "CMakeFiles/Fitness_Club.dir/Receptionist.cpp.obj"
   "CMakeFiles/Fitness_Club.dir/Trainer.cpp.obj"
+  "CMakeFiles/Fitness_Club.dir/TrainingPlan.cpp.obj"
   "CMakeFiles/Fitness_Club.dir/main.cpp.obj"
   "Fitness_Club.exe"
   "Fitness_Club.exe.manifest"

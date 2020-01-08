@@ -26,6 +26,65 @@ bool Receptionist::WeekendShift(int hours) {
     else return false;
 }
 
-bool Receptionist::SellProduct(Product *product) {
 
+void Receptionist::ResetValues() {
+    hoursWorked = 0;
+    ProductsEarnings = 0;
+}
+
+void Receptionist::SetHourlyFee() {
+    switch(GetRank()) {
+        case 1:
+            hourlyFee=12.0;
+            break;
+        case 2:
+            hourlyFee=15.0;
+            break;
+        case 3:
+            hourlyFee=18.0;
+            break;
+        case 4:
+            hourlyFee=23.0;
+            break;
+        case 5:
+            hourlyFee=27.0;
+            break;
+    }
+}
+
+void Receptionist::SetProductsInterest(){
+    switch(GetRank()) {
+        case 1:
+            productsInterest=0.07;
+            break;
+        case 2:
+            productsInterest=0.1;
+            break;
+        case 3:
+            productsInterest=0.18;
+            break;
+        case 4:
+            productsInterest=0.21;
+            break;
+        case 5:
+            productsInterest=0.25;
+            break;
+    }
+}
+
+bool Receptionist::Promote() {
+    if(Employee::Promote()) {
+        SetHourlyFee();
+        SetProductsInterest();
+        return true;
+    }
+    return false;
+}
+
+bool Receptionist::SellProduct(Product *product) {
+    if(product) {
+        ProductsEarnings += product->price;
+        return true;
+    }
+    return false;
 }

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "Templates.h"
+#include <time.h>
 
 FitnessClub::FitnessClub(string name, string address, string city) {
     this->name = name;
@@ -13,27 +14,33 @@ FitnessClub::FitnessClub(string name, string address, string city) {
     this->closeTime=22;
 }
 
-bool FitnessClub::EmployTrainer(string name, string surname, string nip, string address, int id, int rank, float trainingInterest, float groupWorkoutFee) {
-    Trainer* result = new Trainer(name, surname, nip, address, id, rank, trainingInterest, groupWorkoutFee);
-    Employees.push_back(result);
-    return true;
+vector<Product*> FitnessClub::Products;
+
+bool FitnessClub::EmployTrainer(string name, string surname, string nip, string address, int id, int rank) {
+    if(!IdExistsEmployees(id)) {
+        Trainer *result = new Trainer(name, surname, nip, address, id, rank);
+        Employees.push_back(result);
+        return true;
+    }
+    return false;
 }
 
-bool
-FitnessClub::EmployConsultant(string name, string surname, string nip, string address, int id, int rank, float contractInterest,
-                              float trainingInterest, float baseSalary) {
-    Consultant* result = new Consultant(name, surname, nip, address, id, rank, contractInterest, trainingInterest, baseSalary);
-   Employees.push_back(result);
-   if (result) return true;
-   else return false;
+bool FitnessClub::EmployConsultant(string name, string surname, string nip, string address, int id, int rank) {
+    if(!IdExistsEmployees(id)) {
+        Consultant *result = new Consultant(name, surname, nip, address, id, rank);
+        Employees.push_back(result);
+        return true;
+    }
+   return false;
 }
 
-bool FitnessClub::EmployReceptionist(string name, string surname, string nip, string address, int id, int rank, float hourlyFee,
-                                     float productsInterest) {
-    Receptionist* result = new Receptionist(name, surname, nip, address, id, rank, hourlyFee, productsInterest);
-    Employees.push_back(result);
-    if (result) return true;
-    else return false;
+bool FitnessClub::EmployReceptionist(string name, string surname, string nip, string address, int id, int rank) {
+    if(!IdExistsEmployees(id)) {
+        Receptionist *result = new Receptionist(name, surname, nip, address, id, rank);
+        Employees.push_back(result);
+        return true;
+    }
+    return false;
 }
 
 Employee *FitnessClub::FindEmployee(int id) {
@@ -118,15 +125,20 @@ void FitnessClub::RemoveMember(Member *member) {
 
 void FitnessClub::PrintMembers() {
     for (Member* m : Members){
-        cout<<m->GetInformation()<<endl;
+        m->PrintMe();
     }
 }
 
 bool FitnessClub::AddContract(Member *member, Consultant *consultant, Trainer *trainer, int id, float membershipFee,
                               float trainingFee, float terminationFee, int duration) {
-    Contract* result = new Contract(id, duration, membershipFee, trainingFee, terminationFee, consultant, trainer, member);
-    Contracts.push_back(result);
-    member->SetHasActiveContract(true);
+    if(!member->HasActiveContract()) {
+        Contract *result = new Contract(id, duration, membershipFee, trainingFee, terminationFee, consultant, trainer,
+                                        member);
+        Contracts.push_back(result);
+        member->SetHasActiveContract(true);
+        return true;
+    }
+    return false;
 }
 
 Contract *FitnessClub::FindContract(int id) {
@@ -159,9 +171,12 @@ bool FitnessClub::TransferContract(Member *from, Member *to) {
 }
 
 bool FitnessClub::TerminateContract(Contract * contract) {
-    ChargeTerminationFee(contract);
-    DeleteContract(contract);
-    return false;
+    if(contract) {
+        ChargeTerminationFee(contract);
+        DeleteContract(contract);
+        return true;
+    }
+    else return false;
 }
 
 void FitnessClub::ChargeMonthlyFee(Contract *contract) {
@@ -181,7 +196,11 @@ bool FitnessClub::ChargeMembers() {
     }
 
 bool FitnessClub::ChargeTerminationFee(Contract *contract) {
-    totalBudget+=contract->GetTerminationFee();
+    if(contract) {
+        totalBudget += contract->GetTerminationFee();
+        return true;
+    }
+    return false;
 }
 
 float FitnessClub::GetSalary(Employee *emp) {
@@ -221,7 +240,7 @@ float FitnessClub::GetSalary(Employee *emp) {
 
 }
 
-bool FitnessClub::GatherFromReceptionists() {
+void FitnessClub::GatherFromReceptionists() {
     for(Employee* emp : Employees){
         if(typeid(*emp) == typeid(Receptionist)){
             Receptionist* receptionist = dynamic_cast<Receptionist *>(emp);
@@ -231,14 +250,18 @@ bool FitnessClub::GatherFromReceptionists() {
 }
 
 bool FitnessClub::PaySalary(Employee* emp) {
-    totalBudget-=GetSalary(emp);
+    if(emp) {
+        totalBudget -= GetSalary(emp);
+        return true;
+    }
+    return false;
 }
 
-bool FitnessClub::PayAdditionalExpenses() {
+void FitnessClub::PayAdditionalExpenses() {
     totalBudget-=additionalExpenses;
 }
 
-bool FitnessClub::PaySalaryToAll() {
+void FitnessClub::PaySalaryToAll() {
     for (Employee* emp : Employees){
         PaySalary(emp);
     }
@@ -259,20 +282,13 @@ bool FitnessClub::setOpenHours(int open, int closed) {
 
 void FitnessClub::NextMonth() {
     ChargeMembers();
+    GatherFromReceptionists();
     PaySalaryToAll();
-    ResetHoursWorked();
+    ResetEmployees();
     DecrementContractDurations();
     DeleteExpiredContracts();
 }
 
-void FitnessClub::ResetHoursWorked() {
-    for(Employee* emp : Employees){
-        if(typeid(*emp) == typeid(Receptionist)){
-            Receptionist* receptionist = dynamic_cast<Receptionist *>(emp);
-            receptionist->SetHoursWorked(0);
-        }
-    }
-}
 
 void FitnessClub::DecrementContractDurations() {
     for(Contract* c : Contracts){
@@ -300,8 +316,7 @@ void FitnessClub::DeleteContract(Contract * contract) {
 }
 
 string FitnessClub::GetInformation() {
-    string result="";
-    result+="Name: "+name+", Address: "+address+", City: "+city+", Open Hours: "+to_string(openTime)+"-"+to_string(closeTime)+", Total Budget: "+to_string_with_precision(totalBudget, 2)
+    string result="Name: "+name+", Address: "+address+", City: "+city+", Open Hours: "+to_string(openTime)+"-"+to_string(closeTime)+", Total Budget: "+to_string_with_precision(totalBudget, 2)
             +", Additional Expenses: "+to_string_with_precision(additionalExpenses, 2);
     return result;
 }
@@ -309,4 +324,156 @@ string FitnessClub::GetInformation() {
 void FitnessClub::PrintInformation() {
     cout<<GetInformation()<<endl;
 }
+
+void FitnessClub::ResetEmployees() {
+    for (Employee* emp : Employees){
+        emp->ResetValues();
+    }
+}
+
+void FitnessClub::FireEmployee(Employee *emp) {
+    for(Contract* c : Contracts){
+        if(c->GetTrainer()==emp)
+            c->SetTrainer(nullptr);
+        else if(c->GetConsultant()==emp)
+            c->SetConsultant(nullptr);
+    }
+
+    for (int j = 0; j < Employees.size(); j++) {
+        if (Employees[j] == emp ){
+            delete(Employees[j]);
+            Employees.erase(Employees.begin()+j);
+            break;
+        }
+    }
+    for(Contract* c : Contracts){
+        if(c->GetTrainer()==NULL)
+            c->SetTrainer(RandomTrainer());
+        if(c->GetConsultant()==NULL)
+            c->SetConsultant(RandomConsultant());
+    }
+}
+
+Trainer *FitnessClub::RandomTrainer() {
+    static bool wasInitalized = false;
+    if (wasInitalized == false){
+        srand(time(NULL));
+        wasInitalized = true;
+    }
+    int trainerCount = 0;
+    for(Employee *employee : Employees){
+        if(typeid(Trainer)==typeid(*employee)){
+            trainerCount++;
+        }
+    }
+    int randInt = rand() % trainerCount;
+    trainerCount = 0;
+    for(Employee *employee : Employees){
+        if(typeid(Trainer)==typeid(*employee)){
+            if (trainerCount == randInt)
+                return dynamic_cast<Trainer*>(employee);
+            trainerCount++;
+        }
+    }
+    return NULL;
+}
+
+//PRODUCTS
+
+bool FitnessClub::AddProduct(int id, string name, float price) {
+    if(!FindProduct(id)) {
+        Product *product = new Product();
+        product->name = name;
+        product->id = id;
+        product->price = price;
+        FitnessClub::Products.push_back(product);
+        return true;
+    }
+    return false;
+}
+
+
+void FitnessClub::RemoveProduct(Product *product) {
+    for (int j = 0; j < Products.size(); j++) {
+        if (Products[j] == product ){
+            delete(Products[j]);
+            Products.erase(Products.begin()+j);
+            return;
+        }
+    }
+}
+
+
+Product *FitnessClub::FindProduct(int id) {
+    for(Product* p : Products){
+        if(p->id==id){
+            return p;
+        }
+    }
+    return nullptr;
+}
+
+bool FitnessClub::ChangeProductPrice(Product *product, float newPrice) {
+    if(product) {
+        product->price = newPrice;
+        return true;
+    }
+    return false;
+}
+
+void FitnessClub::PrintProducts() {
+    for(Product* p : Products){
+        cout <<"ID: " + to_string(p->id) + ", Name: " + p->name + ", Price: " + to_string_with_precision(p->price, 2)<<endl;
+    }
+}
+
+Consultant *FitnessClub::RandomConsultant() {
+    static bool wasInitalized = false;
+    if (wasInitalized == false){
+        srand(time(NULL));
+        wasInitalized = true;
+    }
+    int consultantCount = 0;
+    for(Employee *employee : Employees){
+        if(typeid(Consultant)==typeid(*employee)){
+            consultantCount++;
+        }
+    }
+    int randInt = rand() % consultantCount;
+    consultantCount = 0;
+    for(Employee *employee : Employees){
+        if(typeid(Consultant)==typeid(*employee)){
+            if (consultantCount == randInt)
+                return dynamic_cast<Consultant*>(employee);
+            consultantCount++;
+        }
+    }
+    return NULL;
+}
+
+bool FitnessClub::IdExistsEmployees(int id) {
+    for (Employee* e : Employees){
+        if(e->GetId()==id)
+            return true;
+    }
+    return false;
+}
+bool FitnessClub::IdExistsContracts(int id) {
+    for (Contract* c : Contracts){
+        if(c->GetId()==id)
+            return true;
+    }
+    return false;
+}
+bool FitnessClub::IdExistsMembers(int id) {
+    for (Member* m : Members){
+        if(m->GetId()==id)
+            return true;
+    }
+    return false;
+}
+
+
+
+
 
